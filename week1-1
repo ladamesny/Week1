@@ -1,0 +1,108 @@
+puts "1. Write a program that prints your name. Using String and puts"
+gets
+puts "Hello, please enter your name:"
+
+name = gets.chomp
+
+puts "Your name is #{name}"
+
+gets
+system 'clear'
+
+
+puts "2. Write a program that prints the sum of three numbers."
+gets
+puts "Please enter three numbers:"
+
+a = gets.chomp.to_i
+b = gets.chomp.to_i
+c = gets.chomp.to_i
+
+puts "The sum of your three numbers are: #{a+b+c}"
+gets
+system 'clear'
+
+puts "3. Write a program that divides two numbers. Hint: Declare the numbers as float"
+gets
+puts "Please enter two numbers to be divided in the following format: (firstnum/secondnum)"
+a = gets.chomp.to_f
+b = gets.chomp.to_f
+
+puts "Result of #{a} divided by #{b} = #{a/b}"
+gets
+system 'clear'
+
+puts "4. Write a program that prints BIG if a number is > 10,000 but prints SMALL if the number is <= 10,000."
+puts " Hint: Declare a boolean variable that keeps the result of checking if the numbers is > 10,000 or <=10,000."
+
+gets
+puts "Please enter any number"
+num = gets.chomp.to_i
+bool = true
+if num > 10000
+bool = true
+else
+bool = false
+end
+
+if bool
+  puts "BIG"
+else
+  puts "SMALL"
+end
+
+gets
+system 'clear'
+
+puts "5. Write a program that prints numbers from 1 to 1000. Hint Use a loop"
+
+gets
+num = 0
+1000.times do
+  num +=1
+  puts "#{num}"
+end
+
+gets
+system 'clear'
+
+puts "6. Write a program that prints off numbers from 3 to 99. Hint: Use a loop"
+
+gets
+num = 3
+
+while num < 100
+  puts "#{num}"
+  num +=1
+end
+
+gets
+system 'clear'
+
+puts "7. Write a program that prints the sum of numbers from 1 to 1000"
+gets
+
+num = 0
+sum = 0
+1000.times do
+  num +=1
+  sum += num
+  puts "Running sum when n is #{num}: #{sum}"
+end
+
+gets
+system 'clear'
+
+puts "8. Create an array of Strings and print each element."
+
+array=["Hello", "there", "this", "is", "your", "Array", "Contents"]
+puts "Here is the actual array:"
+puts "#{array}"
+gets
+puts "Here are your array contents:"
+
+array.each do |contents|
+  puts contents
+end
+gets
+system 'clear'

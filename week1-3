@@ -1,0 +1,80 @@
+class Company
+  attr_accessor :stockPrice, :companyName, :companyLogoName, :products
+
+  def initialize (sp, cn, cln)
+    @stockPrice = sp
+    @companyName = cn
+    @companyLogoName = cln
+    @products = []
+  end
+
+  def print_products
+    products.each do |product|
+      if product.class == String
+        puts product
+      else
+          puts "Product: #{product.productName}, picture file: #{product.productLogo} and URL: #{product.productURL}"
+      end
+    end
+  end
+end
+
+class Product
+  attr_accessor :productName, :productLogo, :productURL
+
+  def initialize (pn, pl, pu)
+    @productName = pn
+    @productLogo = pl
+    @productURL = pu
+  end
+end
+
+companies = ["Apple", "Google", "Microsoft"]
+
+companies.each do |company|
+  puts "#{company}"
+end
+
+companies << "Facebook"
+
+puts "#{companies[2]}"
+
+puts "#{companies.size}"
+
+company_symbols ={AAPL: "Apple", GOOG: "Google",MSFT: "Microsoft" }
+
+company_symbols.each do |k, v|
+  puts "#{k} : #{v}"
+end
+
+company_symbols[:FB] = "Facebook"
+company_symbols.delete(:AAPL)
+
+puts "\nNumber of elements in the dictionary: #{company_symbols.keys.size}"
+
+google = Company.new(1000, "Google", "google.png")
+
+puts "\nStock Price: #{google.stockPrice} Company Name: #{google.companyName} Company Logo Name: #{google.companyLogoName}"
+
+google.products << "AdWords" << "AdSense" << "GoogleDocs"
+puts "\nGoogle Products:"
+google.products.each do |product|
+  puts product
+end
+
+google.products.delete("GoogleDocs")
+
+puts "\nGoogle Products after removal of one:"
+google.products.each do |product|
+  puts product
+end
+
+adword = Product.new("AdWords", "adwords.png", "http://www.google.com/adwords")
+adsense = Product.new("AdSense", "adsense.png", "http://www.google.com/adsense")
+
+google.products << adword << adsense
+gets
+puts "\n"
+puts "Print Details of all Products"
+google.print_products
+

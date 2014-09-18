@@ -1,0 +1,60 @@
+sum = 0
+num = 0
+
+1000.times do
+  num+=1
+  sum += num
+end
+
+puts "Result of sum problem #1: #{sum}"
+
+sum = 0.0
+num = 0.0
+
+1000.times do
+  num+=1
+  sum += (1/num)
+end
+
+puts "Result of sum problem #2: #{sum}"
+
+sum = 0
+num = 0
+
+1000.times do
+  num+=1
+  sum += num * num
+end
+
+puts "Result of sum problem #3: #{sum}"
+
+sum = 0
+num = 0
+
+30.times do
+  num+=1
+  sum += 1/(num * num * num)
+end
+
+puts "Result of sum problem #4: #{sum}"
+
+sum = 0
+num = 0
+
+while num < 50 do
+  num+=1
+  sum += num
+  num+=1
+  sum -= num
+end
+
+puts "Result of sum problem #5: #{sum}"
+
+while num < 50 do
+  num+=1
+  sum += 1/num
+  num+=1
+  sum -= 1/num
+end
+
+puts "Result of sum problem #6: #{sum}"

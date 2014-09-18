@@ -1,0 +1,64 @@
+class Person
+  attr_accessor :firstName, :lastName, :city
+
+  def initialize(first, last, city)
+    @firstName = first
+    @lastName = last
+    @city = city
+  end
+
+  def ownername
+    "#{firstName} #{lastName}"
+  end
+end
+
+class Car
+  attr_accessor :company, :model, :year, :currentOwner
+
+  def initialize(company, model, year, currentOwner=nil)
+    @company = company
+    @model = model
+    @year = year
+    @currentOwner = currentOwner
+  end
+
+end
+
+jim = Person.new("Jim", "Smith", "New York")
+mason = Person.new("Mason", "King", "LA")
+
+puts "6. Print City for both people:"
+puts "#{jim.firstName} is from #{jim.city} and #{mason.firstName} is from #{mason.city}"
+
+tesla = Car.new("Tesla", "Model S", "2013", jim)
+nissan = Car.new("Nissan", "Leaf", "2012", mason)
+
+
+puts "\n"
+cars = [tesla, nissan]
+
+
+puts "11. Print Company, model year and owner name for both cars:"
+gets
+cars.each do |car|
+  puts "#{car.currentOwner.ownername} owns a #{car.year} #{car.company} #{car.model}"
+end
+puts "\n"
+gets
+system 'clear'
+puts "OWNERSHIP CHANGES!!!\n"
+gets
+
+john = Person.new("John", "Hancock", "Braintree")
+james = Person.new("James", "Madison", "Port Conway")
+
+puts "John Hancock buys the Nissan from Mason"
+nissan.currentOwner = john
+gets
+puts "James Madison buys the Tesla from Jim"
+tesla.currentOwner = james
+gets
+cars.each do |car|
+  puts "#{car.currentOwner.ownername} from #{car.currentOwner.city} now owns the #{car.year} #{car.company} #{car.model}"
+end
+gets
