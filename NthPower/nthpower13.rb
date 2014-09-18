@@ -1,18 +1,20 @@
-puts "Please enter a power"
 
-power = gets.chomp.to_i
+class Power
 
-puts "Please enter a base"
+  def initialize p, b
+    raise ArgumentError if @power.is_a?(String) || @base.is_a?(String)
+    @power = p
+    @base = b
+    @result = 1
+  end
 
-base = gets.chomp.to_i
+  def calculate
+    iteration = 1
+    while iteration <= @power
+      @result *= @base
+      iteration += 1
+    end
+    @result
+  end
 
-result = base
-iteration = 1
-
-while iteration < power
-
-  result *= base
-  iteration += 1
 end
-
-puts result

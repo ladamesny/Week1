@@ -1,0 +1,11 @@
+Hello there this is a test to see
+=begin
+if everything I type gets entered into a string object
+Another line
+more lines
+and one more
+=end
+#this is first delimited line
+this is not delimited
+#this is another delimited
+#countdelimiters11.rb should now have a count of 3

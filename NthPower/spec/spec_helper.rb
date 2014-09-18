@@ -1,0 +1,1 @@
+require_relative '../nthpower13.rb'
